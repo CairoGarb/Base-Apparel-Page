@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    /* Primary Colors */
+    --Desaturated-Red: #ce9797;
+    --Soft-Red: #f96262;    
+    /* Neutral Colors */
+    --Dark-Grayish-Red: #413a3a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img, figure {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-width: 1440px;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: auto;
+}
+
+.text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15rem;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-size:cover;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+.text h1 {
+    font-size: 72px;
+    text-align: start;
+    max-width: 300px;
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 10px;
+    color: var(--Dark-Grayish-Red);
+}
+.text h1 span {
+    color: var(--Desaturated-Red);
+    font-weight: 200;
+}
+.text p {
+    text-align: start;
+    max-width: 450px;
+    color: var(--Desaturated-Red);
+    line-height: 1.8rem;
+    padding-bottom: 2rem;
+}
+
+.logo {
+    height: 2rem;
+    width: 10rem;
+    padding-top: 3rem;
+}
+
+.img {
+    width: 45%;
+    background-image: url(images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+}
+
+#form {
+    width: auto;
+}
+#form input {
+    width: 350px;
+    padding: 1rem 1.5rem;
+    border: 1px solid hsla(0, 36%, 70%, 0.518);
+    border-radius: 30px;
+}
+#form input::placeholder {
+    color: var(--Desaturated-Red);
+    opacity: .5;
+}
+#form button {
+    padding: 1.1rem 2.5rem;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(135deg,hsl(0, 100%, 93%), hsl(0, 69%, 79%));
+    position: absolute;
+    margin-left: 20rem;
+    margin-top: -4.5rem;
+}
+#form button:hover {
+    cursor: pointer;
+    background: hsl(0, 100%, 93%);
+    box-shadow: 0 5px 10px hsla(0, 45%, 67%, 0.623);
+}
+
+.input-control .error-msg {
+    color: var(--Soft-Red);
+    font-size: 14px;
+    margin-top: .5rem;
+    margin-left: 1rem;
+    visibility: hidden;
+}
+.input-control i {
+    color: var(--Soft-Red);
+    scale: 1.5;
+    position: absolute;
+    bottom: 142px;
+    left: 520px;
+    visibility: hidden;
+}
+
+.input-control.error i {
+    visibility: visible;
+}
+.input-control.error #email {   
+    border: 1px solid var(--Soft-Red);
+}
+.input-control.success #email {
+   border: 1px solid green;
+}
+.input-control.error .error-msg {
+    visibility: visible;
+}
+
+.attribution { font-size: 11px; text-align: center; margin-top: 4rem;}
+.attribution a { color: var(--Soft-Red); }
+
+/* Responsiveness */
+/* Smaller Laptops */
+@media screen and (max-width: 1439px) {
+    body {
+        min-width: 901px;
+        max-width: 1439px;
+    }
+    .text {
+        padding-left: 8rem;
+    }
+    .attribution {
+        margin-top: 6rem;
+    }
+    .input-control i {
+        bottom: 185px;
+        left: 420px;
+    }
+}
+
+/* Tablets and Smallers devices */
+@media screen and (max-width: 900px) {
+    body {
+        min-width: 300px;
+        max-width: 900px;
+        overflow:visible;
+    }
+
+    .container {
+        flex-direction:column-reverse;
+        padding: 0;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .text {
+        width: auto;
+        display: flex;
+        padding: 0;
+    }
+    .text h1, .text p {
+        margin: auto;
+        text-align: center;
+        max-width: 350px;
+        padding: 0;
+    }
+    .text h1 {
+        font-size: 42px;
+        padding-top: 16rem;
+    }
+    .text p {
+        padding-top: 2rem;
+    }
+    #form {
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+    #form input {
+        width: 290px;
+    }
+    #form button {
+        padding: 1.1rem 2.5rem;
+        border-radius: 30px;
+        border: none;
+        color: #fff;
+        background: linear-gradient(135deg,hsl(0, 100%, 93%), hsl(0, 69%, 79%));
+        position: absolute;
+        margin-left: 16rem;
+        margin-top: -4.5rem;
+    }
+    .logo {
+        height: 1.5rem;
+        width: 7rem;
+        padding-top: 1.5rem;
+    }
+
+    .img {
+        width: 100%;
+        height: 225px;
+        position: absolute;
+        top: 3.7rem;
+        background-image: url(images/hero-mobile.jpg);
+        background-size: cover;
+    }
+    .attribution {margin-top: 0;}
+}
+@media screen and (max-width: 885px) {
+    body {
+        min-width: 884px;
+        max-width: 885px;
+    }
+    .input-control i {
+        bottom: 374px;
+        left: 495px;
+    }
+}
+@media screen and (max-width: 835px) {
+    body {
+        min-width: 834px;
+        max-width: 835px;
+    }
+    .input-control i {
+        bottom: 464px;
+        left: 470px;
+    }
+}
+@media screen and (max-width: 821px) {
+    body {
+        min-width: 820px;
+        max-width: 821px;
+    }
+    .input-control i {
+        bottom: 450px;
+        left: 465px;
+    }
+}
+@media screen and (max-width: 801px) {
+    body {
+        min-width: 800px;
+        max-width: 801px;
+    }
+    .input-control i {
+        bottom: 550px;
+        left: 455px;
+    }
+}
+@media screen and (max-width: 769px) {
+    body {
+        min-width: 768px;
+        max-width: 769px;
+    }
+    .input-control i {
+        bottom: 293px;
+        left: 440px;
+    }
+}
+
+/* Mobiles */
+@media screen and (max-width: 429px) {
+    body {
+        min-width: 416px;
+        max-width: 429px;
+    }
+    .input-control i {
+        bottom: 112px;
+        left: 270px;
+    }
+}
+@media screen and (max-width: 415px) {
+    body {
+        min-width: 414px;
+        max-width: 415px;
+    }
+    .input-control i {
+        bottom: 85px;
+        left: 270px;
+    }
+}
+@media screen and (max-width: 413px) {
+    body {
+        min-width: 412px;
+        max-width: 413px;
+    }
+    .input-control i {
+        bottom: 185px;
+        left: 265px;
+    }
+}
+@media screen and (max-width: 394px) {
+    body {
+        min-width: 393px;
+        max-width: 394px;
+    }
+    .input-control i {
+        bottom: 115px;
+        left: 255px;
+    }
+}
+@media screen and (max-width: 391px) {
+    body {
+        min-width: 390px;
+        max-width: 391px;
+    }
+    .input-control i {
+        bottom: 23px;
+        left: 255px;
+    }
+}
+@media screen and (max-width: 376px) {
+    body {
+        min-width: 375px;
+        max-width: 376px;
+    }
+    .input-control i {
+        bottom: 0;
+        left: 245px;
+    }
+}
+@media screen and (max-width: 361px) {
+    body {
+        min-width: 360px;
+        max-width: 361px;
+    }
+    .input-control i {
+        bottom: -32px;
+        left: 240px;
+    }
+}
+@media screen and (max-width: 321px) {
+    body {
+        min-width: 320px;
+        max-width: 321px;
+    }
+    .input-control i {
+        bottom: -58px;
+        left: 190px;
+    }
+    .text h1, .text p {
+        max-width: 300px;
+    }
+    .text h1 {
+        font-size: 32px;
+    }
+    .text p {
+        font-size: 12px;
+    }
+    #form input {
+        width: 225px;
+    }
+    #form button {
+        margin-left: 12rem;
+    }
+    .attribution, .attribution a {
+        font-size: 10px;
+    }
+}
